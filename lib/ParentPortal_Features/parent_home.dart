@@ -1,11 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'VaccinationSchedule.dart';
+import 'webinar_details_screen.dart';
 
+// Placeholder for Article Details
+class ArticleDetailsScreen extends StatelessWidget {
+  const ArticleDetailsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Article Details")),
+      body: const Center(child: Text("Article content goes here")),
+    );
+  }
+}
+
+// Main App Entry
+void main() {
+  runApp(
+    MaterialApp.router(
+      title: 'Parent Portal',
+      routerConfig: _router,
+      debugShowCheckedModeBanner: false,
+    ),
+  );
+}
+
+// HomePage
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  final String patientName = "Ayaan";
+  final String patientName = "Charan";
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +92,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 const Text(
-                  'Your baby is now 12 weeks old!',
+                  'Your baby is now 15 weeks old!',
                   style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               ],
@@ -146,7 +172,6 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 },
-
                 child: const Text("Schedule Now"),
               ),
             ],
@@ -229,9 +254,7 @@ class HomePage extends StatelessWidget {
               color: Colors.pink,
               size: 30,
             ),
-            onPressed: () {
-              context.go('/webinar-details');
-            },
+            onPressed: () => context.go('/webinar'),
           ),
         ],
       ),
@@ -342,10 +365,23 @@ class HomePage extends StatelessWidget {
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
         subtitle: Text(subtitle),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-        onTap: () {
-          context.go('/article-details');
-        },
+        onTap: () => context.go('/article-details'),
       ),
     );
   }
 }
+
+// GoRouter configuration
+final GoRouter _router = GoRouter(
+  routes: [
+    GoRoute(path: '/', builder: (context, state) => const HomePage()),
+    GoRoute(
+      path: '/webinar',
+      builder: (context, state) => const WebinarDetailsScreen(),
+    ),
+    GoRoute(
+      path: '/article-details',
+      builder: (context, state) => const ArticleDetailsScreen(),
+    ),
+  ],
+);
