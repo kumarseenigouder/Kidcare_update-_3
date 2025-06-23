@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(builder: (_) => DoctorPortal()),
       );
-    } else if (email == 'p@care.com' && password == '1234') {
+    } else if (email == 'p@gmail.com' && password == '1234') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => ParentPortal()),

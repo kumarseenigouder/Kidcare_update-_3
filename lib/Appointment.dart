@@ -4,14 +4,54 @@ import 'ParentPortal_Features/DoctorDetailsScreen.dart';
 // Doctor data
 final List<Map<String, String>> doctors = [
   {
+    'name': 'Dr. JOHN DOE',
+    'specialty': 'Pediatrician',
+    'image': 'assets/doctor1.png',
+  },
+  {
+    'name': 'Dr. JANE SMITH',
+    'specialty': 'Cardiologist',
+    'image': 'assets/doctor2.png',
+  },
+  {
     'name': 'Dr. PAVAN U',
     'specialty': 'Orthopedic Surgeon',
     'image': 'assets/images/pavan.jpg',
   },
   {
+    'name': 'Dr. JAMES',
+    'specialty': 'Pediatrician',
+    'image': 'assets/doctor3.png',
+  },
+  {
+    'name': 'Dr. SMITH',
+    'specialty': 'Neurologist',
+    'image': 'assets/doctor4.png',
+  },
+  {
     'name': 'Dr. KUMAR S',
-    'specialty': 'Gynecologist',
+    'specialty': 'Pediatric Cardiologist',
     'image': 'assets/doctor2.png',
+  },
+  {
+    'name': 'Dr. JOHNSON',
+    'specialty': 'Dermatologist',
+    'image': 'assets/doctor5.png',
+  },
+  {
+    'name': 'Dr. WILLIAMS',
+    'specialty': 'Allergist',
+    'image': 'assets/doctor6.png',
+  },
+  {
+    'name': 'Dr. BROWN',
+    'specialty': 'Endocrinologist',
+    'image': 'assets/doctor7.png',
+  },
+  {
+    'name': 'Dr. JONES',
+    'specialty': 'Gastroenterologist',
+    'image': 'assets/doctor8.png',
   },
 ];
 
@@ -28,7 +68,7 @@ class ParentAppointmentsTab extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Appointments',
+              'Find a Doctor',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
